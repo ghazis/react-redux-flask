@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button1 } from './buttons';
+import { Button1 } from '../buttons';
 import { Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
 

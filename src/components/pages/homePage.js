@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Button1 } from './buttons';
+import { Button1 } from '../buttons';
 import { Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-class Page2 extends Component {
+class HomePage extends Component {
 
   render () {
     return (
       <div>
-      <h1 className="text-center">Page 2</h1>
+      <h1 className="text-center">Home Page</h1>
       <Table responsive>
         <thead>
           <tr>
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)
-(Page2);
+(HomePage);
