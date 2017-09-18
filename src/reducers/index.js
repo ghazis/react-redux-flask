@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { buttonToggle } from './buttons';
+import { buttonToggle } from './rcReducer';
 
 export default combineReducers({
 	buttonToggle

@@ -2,11 +2,14 @@ import subprocess
 from flask import *
 from os import path
 from cmd_sender import send_cmd
+from flask_cors import CORS
 
 static_assets_path = path.join(path.dirname(__file__), "dist")
 app = Flask(__name__, static_folder=static_assets_path)
+CORS(app)
 
 def _cmd(cmd):
+	cmd = cmd.split()
 	return send_cmd(cmd)
 
 # ----- Routes ----------
@@ -23,4 +26,4 @@ def cmd():
 
 if __name__ == "__main__":
 
-    app.run(host='0.0.0.0', port=3000, threaded=True)
+    app.run(host='0.0.0.0', port=7000, threaded=True)

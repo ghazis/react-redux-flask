@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
-import { runScript } from '../../actions/buttons';
+import { sendCmd } from '../../actions/rcActions';
+import FlatButton from 'material-ui/FlatButton';
 
-class Button1 extends Component {
+class ViewStreamButton extends Component {
 
 	render() {
 
 		return (
 			<div>
-				<Button className={this.props.buttonData.classname} onClick={() => {this.props.runScript('https://httpbin.org/anything', this.props.buttonData.cmd, '1')}}>Button {this.props.buttonData.name}</Button>
+				<FlatButton label="View Live Stream" onClick={() => {this.props.sendCmd('http://192.168.0.150/cmd?cmd=pkill -f mjpg')}} />
 			</div>
 		)
 }
@@ -23,9 +24,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        runScript: (url, cmd, name) => dispatch(runScript(url, cmd, name))
+        sendCmd: (url) => dispatch(sendCmd(url))
     };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)
-(Button1);
+(ViewStreamButton);
